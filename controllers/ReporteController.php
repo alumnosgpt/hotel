@@ -12,8 +12,7 @@ class ReporteController {
         //consulta a la BD 
 
 
-        $data = [1,3,4,3,9];
-        $userData = "DANIEL FUENTES";
+        
         $grado = "Alférez";
         $mpdf = new Mpdf([
             "orientation" => "P",
@@ -35,8 +34,8 @@ class ReporteController {
         $htmlFooter = $router->load('reporte/footer');
         $mpdf->SetHTMLHeader($htmlHeader);
         $mpdf->SetHTMLFooter($htmlFooter);
-        // echo $html;
-        // exit;
+        echo $html;
+        exit;
         $mpdf->WriteHTML($html);
         $mpdf->Output();
         
